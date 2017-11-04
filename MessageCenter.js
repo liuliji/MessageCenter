@@ -31,7 +31,6 @@ var emitList = [];
  */
 // 设置事件监听
 function on(key,cbFunc){
-    debugger;
     if (bindFuncList[key]){
         bindFuncList[key].push(cbFunc);
     }else {
@@ -54,7 +53,7 @@ function emit(key,args){
                 try {
                     ary[i].call(this,args);
                 } catch (error) {
-                    debugger;
+                    
                 }
             }
         }
@@ -70,7 +69,6 @@ function emit(key,args){
 }
 // emitAll，将所有消息都emit
 function emitAll(){
-    debugger;
     for (var key in emitList) {
         if (emitList.hasOwnProperty(key)) {
             var emitAry = emitList[key];
@@ -84,7 +82,7 @@ function emitAll(){
                             try {
                                 ary[iterator].call(this,args);
                             } catch (error) {
-                                debugger;
+
                             }
                         }
                     }
